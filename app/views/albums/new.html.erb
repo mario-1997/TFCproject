@@ -1,0 +1,27 @@
+<div class="titulos">
+    <h1>Nuevo Album</h1 >
+</div>
+
+<div class="padre">
+    <div class="form-new">
+        
+        <%=form_for @album do |f| %>
+            <p><%=f.label "Nombre del Album: "%>
+            <%=f.text_field :name%></p>
+
+            <p><%=f.label "Estilo muscial del grupo: "%>
+            <%=f.text_field :musical_style%></p>
+
+            <p><%=f.label "Fecha de publicación "%>
+            <%=f.text_field :publication_date%></p>
+
+            <p><%=f.label "Nombre del grupo: "%>
+            <%=f.select :group_id,options_from_collection_for_select(@groups,'id','name')%></p>
+            
+
+            <p class="btn-create-new"><%=f.submit "Crear"%></p>
+        
+        <%end%>
+    </div>
+
+</div>

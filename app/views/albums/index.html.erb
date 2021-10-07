@@ -1,0 +1,53 @@
+<div class="titulos">
+    <h1>Albums</h1>
+</div>
+
+
+<div class="container">
+    <div class="row fila">
+        <div class="col-md-8">
+                        <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Identificador</th>
+                            <th>Nombre</th>
+                            <th>Estilo musical</th>
+                            <th>Fecha</th>
+                            <th>Grupo</th>
+                            
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody>
+            
+                        <%@albums.each do |album|%>
+                            <tr>
+                                <td><%=album.id%>
+                                <td><%=album.name%></td>
+                                <td><%=album.musical_style%></td>
+                                <td><%=album.publication_date%></td>
+                                <td><%=album.group.name%></td>
+                                <td>
+                                    <%=link_to "mostrar", album%>
+                                    <%=link_to "Editar", edit_album_path(album)%>  
+
+                                </td>
+                                
+                                
+
+                            </tr>
+                        
+                        <%end%>
+                            
+                    </tbody>
+                
+                </table>
+        </div>
+
+        <div class="col-md-4">
+            <button type="button" class="btn btn-outline-dark create-button"><%=link_to "Crear Album", new_album_path%></button>
+        </div>
+
+    </div>
+</div>

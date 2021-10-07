@@ -1,0 +1,23 @@
+<div class="titulos">
+    <h1>Alta Canción</h1>
+</div>
+
+<div class="padre">
+    <div class="form-new">
+        <%=form_for @song do |f| %>
+            <p><%=f.label "Nombre: "%>
+            <%=f.text_field :name%></p>
+
+            <p><%=f.label "Fecha de publicación: "%>
+            <%=f.text_field :publication_date%></p>
+          
+            <p><%=f.label "Nombre del album: "%>
+            <%=f.select :album_id ,options_from_collection_for_select(@albums,'id','name')%></p>
+            
+            
+
+            <p><%=f.submit "Crear"%></p>
+    
+        <%end%>
+    </div>
+</div>

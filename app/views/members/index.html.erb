@@ -1,0 +1,60 @@
+
+    <div class="titulos">
+        <h1>Miembros</h1>
+    </div>
+
+    
+
+
+<div class="container">
+    <div class="row fila" >
+        <div class="col-md-8">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Identificador</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Ocupación</th>
+                        <th>DNI: </th>
+                        <th>Grupo al que pertenece</th>
+                        
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                    <%@members.each do |member|%>
+                                    <tr>
+                                        <td><%=member.id%>
+                                        <td><%=member.name%></td>
+                                        <td><%=member.surname%></td>
+                                        <td><%=member.ocupation%></td>
+                                        <td><%=member.dni%></td>
+                                        <td><%=member.group.name%></td>
+                                        <td>
+                                            <%=link_to "mostrar", member%>
+                                            <%=link_to "Editar", edit_member_path(member)%>
+                                            <%=link_to "Eliminar",member_path(member),method: "DELETE", data:{confirm:"Seguro de que quieres eliminar"}%>
+                                        </td>
+                                        <!-- -->
+                                        
+
+                                    </tr>
+                                
+                    <%end%>
+                                    
+                </tbody>         
+                        
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <button type="button" class="btn btn-outline-dark create-button"><%=link_to "Crear miembro", new_member_path%></button>
+        </div>
+    </div>
+</div>    
+
+
+
+

@@ -1,0 +1,19 @@
+
+<div class="padre"> 
+    <div class="form-new">
+        <%=form_for @group do |f| %>
+            <p><%=f.label "Nombre del grupo: "%>
+            <%=@group.name%></p> <!-- muestro el nombre del grupo-->
+            <p><%=f.label "Estilo muscial del grupo: "%>
+            <%=@group.musical_style%></p>
+        <%end%>  
+    </div>
+
+    
+</div>
+
+<button type="button" class="btn btn-outline-dark"><%=link_to "Volver atrás",groups_path%></button>
+
+
+
+

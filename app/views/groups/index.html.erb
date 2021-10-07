@@ -1,0 +1,62 @@
+<%flash.each do |msg|%>
+    <%=content_tag :div, msg%>
+
+
+<%end%>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Grupos</h1>
+        </div>
+
+        <div class="col-md-6">
+            <button type="button" class="btn btn-outline-dark create-button"><%=link_to "Crear grupo", new_group_path%></button>
+        </div>
+    </div>
+</div>
+        
+
+
+<div class="container-table">
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Identificador</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Estilo musical</th>                        
+            </tr>
+        </thead>
+        <tbody>
+            <%@groups.each do |group|%>
+                <tr>
+                    <td><%=group.id%>
+                    <td><%=group.name%></td>
+                    <td><%=group.musical_style%></td>
+                    <td>
+                        <%=link_to "mostrar", group%> 
+                        <%=link_to "Editar", edit_group_path(group)%>
+                        <%=link_to "Eliminar", group, method: :delete,data:{confirm:"Seguro de que quieres eliminar"}%>
+                    </td>                             
+                </tr>                    
+            <%end%>                        
+        </tbody>
+    </table>
+        
+    
+
+</div>
+
+    
+
+    
+
+
+        
+</div>
+
+
+

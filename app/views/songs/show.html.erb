@@ -1,0 +1,10 @@
+<div class="padre">
+    <div class="form-new">
+        <%=form_for @song do |f| %>
+            <p><%=f.label "Nombre: "%><%=@song.name%></p> <!-- muestro el nombre del grupo-->
+            <p><%=f.label "Fecha de publicación: "%><%=@song.publication_date%></p>
+            <p><%=f.label "Album: "%><%=@song.album.name%></p> 
+        <%end%>
+    </div>
+</div>
+    <p><button><%=link_to "Volver atrás",songs_path%></button></p> 

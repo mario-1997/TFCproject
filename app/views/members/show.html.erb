@@ -1,0 +1,15 @@
+
+
+<div class="padre">
+    <div class="form-new">
+        <%=form_for @member do |f| %>
+            <p><%=f.label "Nombre: "%><%=@member.name%></p> <!-- muestro el nombre del grupo-->
+            <p><%=f.label "Apellido: "%><%=@member.surname%></p>
+            
+            <p><%=f.label "Ocupación en el grupo: "%><%=@member.ocupation%></p>
+            <p><%=f.label "DNI: "%><%=@member.dni%></p>
+            <p><%=f.label "Grupo: "%><%=@member.group.name%></p> 
+        <%end%>
+    </div>
+</div>
+    <p><button><%=link_to "Volver atrás",members_path%></button></p> 

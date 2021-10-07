@@ -1,0 +1,21 @@
+<div class="titulos">
+    <h1>Alta concierto</h1>
+</div>
+
+<div class="padre">
+    <div class="form-new">
+        <%=form_for @concert do |f| %>
+            <p><%=f.label "Lugar: "%>
+            <%=f.text_field :place%></p>
+
+            <p><%=f.label "Fecha: "%>
+            <%=f.text_field :concert_date%></p>    
+
+            <p><%=f.label "Nombre del grupo: "%>
+            <%=f.select :group_id,options_from_collection_for_select(@groups,'id','name')%></p>
+
+            <p><%=f.submit "Crear"%></p>
+    
+        <%end%>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="padre">
+    <div class="form-new">
+        <%=form_for @concert do |f| %>
+            <p><%=f.label "Lugar: "%><%=@concert.place%></p> <!-- muestro el nombre del grupo-->
+            <p><%=f.label "Fecha: "%><%=@concert.concert_date%></p>
+            <p><%=f.label "Grupo: "%><%=@concert.group.name%></p> 
+        <%end%>
+    </div>
+</div>
+
+    
+
+
+<p><button><%=link_to "Volver atrás",concerts_path%></button></p> 

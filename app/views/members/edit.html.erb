@@ -1,0 +1,20 @@
+<div class="padre">
+    <div class="form-new">
+        <%=form_for @member do |f| %>
+            <p><%=f.label "Nombre: "%>
+            <%=f.text_field :name%></p>
+
+            <p><%=f.label "Apellido: "%>
+            <%=f.text_field :surname%></p>
+
+            <p><%=f.label "Ocupación en el grupo: "%>
+            <%=f.text_field :ocupation%></p>
+
+            <p><%=f.label "Nombre del grupo: "%>
+            <%=f.select :group_id,options_from_collection_for_select(@groups,'id','name')%></p>
+
+            <p><%=f.submit "Actualizar"%></p>
+        
+        <%end%>
+</div>
+</div>
