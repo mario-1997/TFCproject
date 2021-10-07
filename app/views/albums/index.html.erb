@@ -31,6 +31,7 @@
                                 <td>
                                     <%=link_to "mostrar", album%>
                                     <%=link_to "Editar", edit_album_path(album)%>  
+                                    <%=link_to "Eliminar", album, method: :delete,data:{confirm:"Seguro de que quieres eliminar este Album?"}%>
 
                                 </td>
                                 
