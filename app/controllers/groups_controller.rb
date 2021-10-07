@@ -26,23 +26,19 @@ class GroupsController < ApplicationController
 
     def destroy
         group = Group.find(params[:id])#guardamos el id de un grupo en la variable group
-        p "****************************************"
-        p group.members.count
-        p group.concerts.count
-        p group.albums.count 
+        
+        #p group.members.count
+        #p group.concerts.count
+        #p group.albums.count 
         if group.members.count > 0 || group.concerts.count > 0 || group.albums.count > 0
-            
-            
             redirect_to groups_path, notice: 'No se ha podido eliminar nada'
         else 
             group.destroy  #borramos el grupo con el id guardado en la variable 'params'
-            redirect_to groups_path  #borramos el grupo y nos redirije a la ruta de grupos
-
-            
-            
+            redirect_to groups_path  #borramos el grupo y nos redirije a la ruta de grupos              
         end
         
     end
+    
 
     def edit
         @group = Group.find(params[:id])  #buscamos el id del grupo que queremos actualizar
