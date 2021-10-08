@@ -1,9 +1,8 @@
-<%flash.each do |msg|%>
-    <%=content_tag :div, msg%>
-
-
-<%end%>
-
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 
 
 <div class="container">
@@ -39,7 +38,7 @@
                     <td>
                         <%=link_to "mostrar", group%> 
                         <%=link_to "Editar", edit_group_path(group)%>
-                        <%=link_to "Eliminar", group, method: :delete,data:{confirm:"Seguro de que quieres eliminar"}%>
+                        <%=link_to "Eliminar", group, method: :delete ,data:{confirm:"Seguro de que quieres eliminar"}%>
                     </td>                             
                 </tr>                    
             <%end%>                        
