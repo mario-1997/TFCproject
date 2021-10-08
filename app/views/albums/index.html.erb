@@ -1,8 +1,17 @@
-<%flash.each do |msg|%>
+
+<!-- <%flash.each do |msg|%>
     <%=content_tag :div, msg%>
 
 
-<%end%>
+<%end%> -->
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+
 
 <div class="titulos">
     <h1>Albums</h1>

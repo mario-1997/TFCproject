@@ -40,10 +40,10 @@ class AlbumsController < ApplicationController
     def destroy
         album = Album.find(params[:id])
         if album.songs.count > 0 
-            p "-----------------------------------------"
+            
             redirect_to albums_path, notice: 'No se ha podido eliminar ningun album'
         else
-            p "*****************************" 
+           
             album.destroy
             redirect_to albums_path
         end
