@@ -6,11 +6,21 @@
       <a class="nav-link active" href="<%=members_path%>">Miembros</a>
       <a class="nav-link active" href="<%=concerts_path%>">Conciertos</a>
       <a class="nav-link active" href="<%=albums_path%>">Albums</a>
-      <a class="nav-link active" href="<%=songs_path%>">Canciones</a>     
+      <a class="nav-link active" href="<%=songs_path%>">Canciones</a>  
+      
+      <%=link_to "Salir", destroy_user_session_path, method: "DELETE"%>
 
     </nav>          
   </div>
 </header>
 
 
+<!-- 
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+
+
+-->
 
