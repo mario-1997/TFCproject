@@ -29,10 +29,10 @@ class GroupsController < ApplicationController
         
          
         if group.members.count > 0 || group.concerts.count > 0 || group.albums.count > 0
-            p "----------------------------------------------------------------"
+            
             redirect_to groups_path, notice: 'No se ha podido eliminar ningun grupo'
         else 
-            p "********************************************************************"
+            
             group.destroy  #borramos el grupo con el id guardado en la variable 'params'
             redirect_to groups_path  #borramos el grupo y nos redirije a la ruta de grupos              
         end
