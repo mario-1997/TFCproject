@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_scope :user do
+  as :user do
       root to: "devise/sessions#new"
     end
 
   #root to: 'registrations#new'
-  get '/home', to: 'home#index'
+  #get '/home', to: 'home#index'
   
   resources :groups #me hace el CRUD entero
   resources :concerts 
