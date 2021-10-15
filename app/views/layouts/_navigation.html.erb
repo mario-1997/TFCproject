@@ -1,17 +1,19 @@
 
 <header class="masthead mb-auto cabecera-nav">
-  <div class="inner">
-    <nav class="nav nav-masthead justify-content-center">
-      <a class="nav-link active" href="<%=groups_path%>">Grupos</a>
-      <a class="nav-link active" href="<%=members_path%>">Miembros</a>
-      <a class="nav-link active" href="<%=concerts_path%>">Conciertos</a>
-      <a class="nav-link active" href="<%=albums_path%>">Albums</a>
-      <a class="nav-link active" href="<%=songs_path%>">Canciones</a>  
-      
-      <%=link_to "Cerrar sesión", destroy_user_session_path, method: "DELETE"%>
-
+  
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand"><img src="discografica.png"></a>
+        <a class="nav-link active" href="<%=groups_path%>">Grupos</a>
+        <a class="nav-link active" href="<%=members_path%>">Miembros</a>
+        <a class="nav-link active" href="<%=concerts_path%>">Conciertos</a>
+        <a class="nav-link active" href="<%=albums_path%>">Albums</a>
+        <a class="nav-link active" href="<%=songs_path%>">Canciones</a>  
+        
+        <%=link_to "Cerrar sesión", destroy_user_session_path, method: "DELETE", class:"btn btn-outline-dark btn-destroy-session"%>
+      </div>
     </nav>          
-  </div>
+  
 </header>
 
 
@@ -21,6 +23,19 @@
 <p class="alert"><%= alert %></p>
 
 
+<header class="masthead mb-auto cabecera-nav">
+  <div class="inner">
+    <nav class="nav nav-masthead justify-content-center">
+      <a class="nav-link active" href="<%=groups_path%>">Grupos</a>
+      <a class="nav-link active" href="<%=members_path%>">Miembros</a>
+      <a class="nav-link active" href="<%=concerts_path%>">Conciertos</a>
+      <a class="nav-link active" href="<%=albums_path%>">Albums</a>
+      <a class="nav-link active" href="<%=songs_path%>">Canciones</a>  
+      
+      <%=link_to "Cerrar sesión", destroy_user_session_path, method: "DELETE", class:"btn btn-outline-dark btn-destroy-session"%>
+    </nav>          
+  </div>
+</header>
 
 -->
 

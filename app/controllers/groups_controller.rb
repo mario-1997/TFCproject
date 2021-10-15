@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
 
     def index  #metodo para enseñar todos los grupos que tengo en mi BD
-        @groups = Group.all #del modelo de grupos me coje todos los grupos (.all)
+        #@groups = Group.all #del modelo de grupos me coje todos los grupos (.all)
+        @groups = ::Groups::Search.new.execute
     end
 
     def new #metodo para definir un nuevo grupo
