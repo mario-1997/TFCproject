@@ -1,53 +1,43 @@
 
-    <div class="titulos">
-        <h1>Canciones</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Canciones</h1>
+            </div>
+            <div class="col-md-6">
+                <%=link_to "Crear canción", new_song_path, class:"btn btn-outline-dark create-button"%>
+            </div>
+        </div>
     </div>
 
     
 
 
-<div class="container">
-    <div class="row fila" >
-        <div class="col-md-8">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Identificador</th>
-                        <th>Nombre</th>
-                        <th>Fecha de publicación</th>
-                        <th>Album al que pertenece</th>
+<div class="container-table">    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Identificador</th>
+                <th>Nombre</th>
+                <th>Fecha de publicación</th>
+                <th>Album al que pertenece</th>
                         
-                    </tr>
-                </thead>
-
-                <tbody>
-                    
-                    <%@songs.each do |song|%>
-                                    <tr>
-                                        <td><%=song.id%>
-                                        <td><%=song.name%></td>
-                                        <td><%=song.publication_date%></td>
-                                        <td><%=song.album.name%></td>
-                                        <td>
-                                            <%=link_to "mostrar", song%>
-                                            <%=link_to "Editar", edit_song_path(song)%>
-                                            <%=link_to "Eliminar", song,method: :delete, data:{confirm: 'Seguro que quieres eliminar? '}%>
-                                            
-                                        </td>
-                                        <!-- -->
-                                        
-
-                                    </tr>
-                                
-                    <%end%>
-                                    
-                </tbody>         
-                        
-            </table>
-        </div>
-
-        <div class="col-md-4">
-            <button type="button" class="btn btn-outline-dark create-button"><%=link_to "Crear canción", new_song_path%></button>
-        </div>
-    </div>
+            </tr>
+        </thead>
+        <tbody>                    
+            <%@songs.each do |song|%>
+                <tr>
+                    <td><%=song.id%>
+                    <td><%=song.name%></td>
+                    <td><%=song.publication_date%></td>
+                    <td><%=song.album.name%></td>
+                    <td>
+                        <%=link_to "mostrar", song%>
+                        <%=link_to "Editar", edit_song_path(song)%>
+                        <%=link_to "Eliminar", song,method: :delete, data:{confirm: 'Seguro que quieres eliminar? '}%>                                            
+                    </td>                                         
+                </tr>                                
+            <%end%>                                    
+        </tbody>    
+    </table>
 </div>   

@@ -28,7 +28,7 @@ td, th{
 }
 .create-button{
     margin:auto;
-    margin-left: 50px;
+    
 }
 
 .fila{
@@ -37,11 +37,10 @@ td, th{
 
 .cabecera-nav{
     margin-bottom: 20px;
+    background-color: cadetblue;
     
 }  
-a:hover{
-    color: black;
-}
+
 h1{
     text-align: center;
 }
@@ -69,6 +68,9 @@ h1{
 .contaianer-table{
     margin-top: 50px;
     
+}
+.btn-destroy-session{
+    margin-right: 2px;
 }
 
 

@@ -19,7 +19,7 @@
             <%=f.select :group_id,options_from_collection_for_select(@groups,'id','name')%></p>
             
 
-            <p class="btn-create-new"><%=f.submit "Crear"%></p>
+            <%=f.submit "Crear", class:"btn btn-outline-dark create-button"%>
         
         <%end%>
     </div>
