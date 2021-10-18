@@ -14,7 +14,7 @@
             <p><%=f.label "Nombre del grupo: "%>
             <%=f.select :group_id,options_from_collection_for_select(@groups,'id','name')%></p>
 
-            <p><%=f.submit "Actualizar"%></p>
+            <%=f.submit "Actualizar", class:"btn btn-outline-dark create-button"%>
         <%end%>
     </div>
 </div>

@@ -10,7 +10,7 @@
             <p><%=f.label "Nombre del Album: "%>
             <%=f.select :album_id,options_from_collection_for_select(@albums,'id','name')%></p>
 
-            <p><%=f.submit "Actualizar"%></p>
+            <%=f.submit "Actualizar", class:"btn btn-outline-dark create-button"%>
 
         <%end%>
     </div>
