@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
     def destroy
         p "**************************************************************************************"
         @group = ::Groups::Destroy.new(id: params[:id]).execute
+        redirect_to groups_path
         
     end
     
