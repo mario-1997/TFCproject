@@ -26,17 +26,8 @@ class GroupsController < ApplicationController
     end
 
     def destroy
-        group = Group.find(params[:id])#guardamos el id de un grupo en la variable group
-        
-         
-        if group.members.count > 0 || group.concerts.count > 0 || group.albums.count > 0
-            
-            redirect_to groups_path, notice: 'No se ha podido eliminar ningun grupo'
-        else 
-            
-            group.destroy  #borramos el grupo con el id guardado en la variable 'params'
-            redirect_to groups_path  #borramos el grupo y nos redirije a la ruta de grupos              
-        end
+        p "**************************************************************************************"
+        @group = ::Groups::Destroy.new(id: params[:id]).execute
         
     end
     
