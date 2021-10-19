@@ -9,7 +9,7 @@ module Groups
             group = Group.find(@id)
                           
             group.destroy  #borramos el grupo con el id guardado en la variable 'params'
-            'ok'        
+              
                   
         end
     
