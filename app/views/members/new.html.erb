@@ -2,6 +2,12 @@
     <h1>Alta Miembro</h1>
 </div>
 
+<% flash.each do |type, msg| %>
+  <div class="alert alert-danger" >
+    <%= msg %>
+  </div>
+<% end %>
+
 <div class="padre">
     <div class="form-new">
         <%=form_for @member do |f| %>

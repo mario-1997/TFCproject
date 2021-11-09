@@ -8,16 +8,8 @@ module Groups
 
         def execute
             groups = Group.all 
-            
-            
-            groups = groups.where(name: @name) if @name
-            
-            groups 
-
-            
+            groups = groups.where(name: @name) if @name            
+            groups            
         end
-
-
-
     end
 end    
