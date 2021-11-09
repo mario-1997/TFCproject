@@ -37,7 +37,7 @@ td, th{
 
 .cabecera-nav{
     margin-bottom: 20px;
-    background-color: cadetblue;
+    
     
 }  
 
@@ -71,6 +71,9 @@ h1{
 }
 .btn-destroy-session{
     margin-right: 2px;
+}
+.div-labels{
+    margin-bottom: 20px;
 }
 
 

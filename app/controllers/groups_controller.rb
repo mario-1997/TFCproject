@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
         if(@group.save)  #si el grupo ya está creado me redirijo a gruppos
             redirect_to @group 
         else 
-            render :new #si no está creado voy a new y lo creo
+            render :new, notice: 'No se ha podido crear ningun grupo' #si no está creado voy a new y lo creo
         end
     end
 
@@ -26,9 +26,16 @@ class GroupsController < ApplicationController
     end
 
     def destroy
-        p "**************************************************************************************"
-        @group = ::Groups::Destroy.new(id: params[:id]).execute
-        redirect_to groups_path
+         
+        # redirect_to groups_path
+            group = Group.find(params[:id])
+         if group.members.count > 0 || group.concerts.count > 0 || group.albums.count > 0
+              redirect_to groups_path, notice: 'No se ha podido eliminar este grupo'
+         else
+             ::Groups::Destroy.new(id: params[:id]).execute
+             redirect_to groups_path
+         end
+        
         
     end
     

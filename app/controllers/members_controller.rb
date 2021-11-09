@@ -14,7 +14,7 @@ class MembersController < ApplicationController
         if(@member.save)  #si el grupo ya está creado me redirijo a gruppos
             redirect_to @member 
         else 
-            render :new #si no está creado voy a new y lo creo
+            render :new , notice: 'No se ha podido crear ningun grupo'#si no está creado voy a new y lo creo
         end
     end
 
