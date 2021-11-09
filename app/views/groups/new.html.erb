@@ -2,17 +2,26 @@
     <h1>Alta grupo</h1 >
 </div>
 
+<% flash.each do |type, msg| %>
+  <div class="alert alert-danger" >
+    <%= msg %>
+  </div>
+<% end %>
 
 
 <div class="padre">
     <div class="form-new">
         
         <%=form_for @group do |f| %>
-            <p><%=f.label "Nombre del grupo: "%>
-            <%=f.text_field :name%></p>
+            <div class="div-labels">
+              <%=f.label "Nombre del grupo: "%>
+              <%=f.text_field :name%>
+            </div>
 
-            <p><%=f.label "Estilo muscial del grupo: "%>
-            <%=f.text_field :musical_style%></p>
+            <div class="div-labels">
+              <%=f.label "Estilo muscial del grupo: "%>
+              <%=f.text_field :musical_style%>
+            </div>
             
 
             <%=f.submit "Crear", class:"btn btn-outline-dark create-button"%>

@@ -3,6 +3,6 @@ class Group < ApplicationRecord
     has_many :concerts
     has_many :albums
 
-    validates :name, presence: true
+    validates :name,:musical_style, presence: true
     
 end

@@ -6,13 +6,8 @@ module Groups
         end
 
         def execute
-            group = Group.find(@id)
-                          
-            group.destroy  #borramos el grupo con el id guardado en la variable 'params'
-              
-                  
-        end
-    
+            group = Group.find(@id)                          
+            group.destroy  #borramos el grupo con el id guardado en la variable 'params'                 
+        end    
     end
-
 end
