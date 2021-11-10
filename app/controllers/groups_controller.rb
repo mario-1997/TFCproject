@@ -10,7 +10,9 @@ class GroupsController < ApplicationController
     end
 
     def create   #guardo en la base de datos y redirijo donde quiera  (Esto no tiene vista)
-        @group = Group.new(group_params)  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
+       
+        @group = Groups::Create.new(group_params: group_params).execute 
+        #redirect_to @group
         if(@group.save)  #si el grupo ya está creado me redirijo a gruppos
             redirect_to @group 
         else 
@@ -20,6 +22,8 @@ class GroupsController < ApplicationController
 
 
     def show  #metodo para mostrar un solo grupo ----->  (el metodo all me muestra todos los grupos)
+        
+       
         @group = Group.find(params[:id]) #solo cogemos el id del array params
         #p "****************"
        #p @group

@@ -1,7 +1,7 @@
 
 <header class="masthead mb-auto cabecera-nav">
   
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand"><img src="/discografica.png"></a>
         <a class="nav-link active" href="<%=groups_path%>">Grupos</a>
@@ -10,7 +10,8 @@
         <a class="nav-link active" href="<%=albums_path%>">Albums</a>
         <a class="nav-link active" href="<%=songs_path%>">Canciones</a>  
         
-        <%=link_to "Cerrar sesión", destroy_user_session_path, method: "DELETE", class:"btn btn-outline-dark btn-destroy-session"%>
+        <%=link_to "Cerrar sesión", destroy_user_session_path, method: "DELETE", class:"btn btn-outline-primary btn-destroy-session"%>
+        <p>Usuario actual: <%=current_user.name%></p>
       </div>
     </nav>          
   
