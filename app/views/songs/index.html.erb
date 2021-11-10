@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Canciones</h1>
+                <h2>Canciones</h2>
             </div>
             <div class="col-md-6">
                 <%=link_to "Crear canción", new_song_path, class:"btn btn-outline-dark create-button"%>
@@ -32,9 +32,9 @@
                     <td><%=song.publication_date%></td>
                     <td><%=song.album.name%></td>
                     <td>
-                        <%=link_to "mostrar", song%>
-                        <%=link_to "Editar", edit_song_path(song)%>
-                        <%=link_to "Eliminar", song,method: :delete, data:{confirm: 'Seguro que quieres eliminar? '}%>                                            
+                        <%=link_to "mostrar", song, class:"btn btn-outline-success"%>
+                        <%=link_to "Editar", edit_song_path(song), class:"btn btn-outline-success "%>
+                        <%=link_to "Eliminar", song, method: :delete ,data:{confirm:"Seguro de que quieres eliminar"}, class:"btn btn-outline-success"%>                                          
                     </td>                                         
                 </tr>                                
             <%end%>                                    

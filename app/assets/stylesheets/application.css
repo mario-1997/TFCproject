@@ -14,20 +14,31 @@
  *= require_self
  */
 body{
-    padding: 100px;
-    background: #ADA996;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   padding-right: 100px;
+   padding-left: 100px;
+   
+    
 
+   background: #E0EAFC;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
 
     
+    
+}
+img{
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin: auto;
     
 }
 td, th{
     text-align: center;
 }
 .create-button{
-    margin:auto;
+    margin-left:490px;
     
 }
 
@@ -43,6 +54,8 @@ td, th{
 
 h1{
     text-align: center;
+    margin-top: 50px;
+    
 }
 .titulos{
     margin-top: 100px;
@@ -67,6 +80,7 @@ h1{
 
 .contaianer-table{
     margin-top: 50px;
+    
     
 }
 .btn-destroy-session{

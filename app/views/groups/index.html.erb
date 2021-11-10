@@ -8,11 +8,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1>Grupos</h1>
+            <h2>Grupos</h2>
         </div>
 
-        <div class="col-md-6">
-            <%=link_to "Crear grupo", new_group_path, class:"btn btn-outline-dark create-button"%>
+        <div class="col-md-6 aa">
+            <%=link_to "Crear grupo", new_group_path, class:"btn btn-outline-success create-button"%>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
 
 
 <div class="container-table">    
-    <table class="table table-hover ">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Identificador</th>
@@ -36,9 +36,9 @@
                     <td><%=group.name%></td>
                     <td><%=group.musical_style%></td>
                     <td>
-                        <%=link_to "Ver", group, class:"btn btn-outline-dark create-button"%> 
-                        <%=link_to "Editar", edit_group_path(group), class:"btn btn-outline-dark create-button"%>
-                        <%=link_to "Eliminar", group, method: :delete ,data:{confirm:"Seguro de que quieres eliminar"}, class:"btn btn-outline-dark create-button"%>
+                        <%=link_to "Ver", group, class:"btn btn-outline-success"%> 
+                        <%=link_to "Editar", edit_group_path(group), class:"btn btn-outline-success "%>
+                        <%=link_to "Eliminar", group, method: :delete ,data:{confirm:"Seguro de que quieres eliminar"}, class:"btn btn-outline-success"%>
                     </td>                             
                 </tr>                    
             <%end%>                        

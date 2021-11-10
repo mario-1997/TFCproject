@@ -6,7 +6,7 @@
 <%end%> -->
 
 <% flash.each do |type, msg| %>
-  <div>
+  <div class="alert alert-danger"> 
     <%= msg %>
   </div>
 <% end %>
@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1>Albums</h1>
+            <h2>Albums</h2>
         </div>
         <div class="col-md-6">
             <%=link_to "Crear Album", new_album_path, class:"btn btn-outline-dark create-button"%>
