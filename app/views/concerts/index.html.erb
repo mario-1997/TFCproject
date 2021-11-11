@@ -15,23 +15,21 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Identificador</th>
-                <th>Lugar</th>
-                <th>Fecha</th>
-                <th>Grupo</th>           
+                
+                <th>Grupo</th>
+                <th>Lugar</th>           
             </tr>
         </thead>
         <tbody>            
             <%@concerts.each do |concert|%>
                 <tr>
-                    <td><%=concert.id%>
-                    <td><%=concert.place%>
-                    <td><%=concert.concert_date%></td>
+                    
                     <td><%=concert.group.name%></td>
+                    <td><%=concert.place%></td>
                     <td>
-                        <%=link_to "mostrar", concert%>
-                        <%=link_to "Editar", edit_concert_path(concert)%>
-                        <%=link_to "Eliminar",concert_path(concert),method: "DELETE", data:{confirm:"Seguro de que quieres eliminar"}%>
+                        <%=link_to "Detalles", concert, class:"btn btn-outline-success btn-sm"%>
+                        <%=link_to "Editar", edit_concert_path(concert), class:"btn btn-outline-success btn-sm"%>
+                        <%=link_to "Eliminar",concert_path(concert),method: "DELETE", data:{confirm:"Seguro de que quieres eliminar"}, class:"btn btn-outline-success btn-sm"%>
                     </td>                               
                 </tr>                        
             <%end%>                            

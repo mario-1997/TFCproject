@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
 
     def index
-        @songs = Song.all
+        @songs = ::Songs::Search.new.execute
     end
 
     def new
@@ -10,9 +10,9 @@ class SongsController < ApplicationController
     end
 
     def create   #guardo en la base de datos y redirijo donde quiera  (Esto no tiene vista)
-        @song = Song.new(song_params)  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
+        @song = Songs::Create.new(song_params: song_params).execute  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
         if(@song.save)  #si el grupo ya está creado me redirijo a gruppos
-            redirect_to @song 
+            redirect_to songs_path
         else 
             render :new #si no está creado voy a new y lo creo
         end
@@ -20,7 +20,7 @@ class SongsController < ApplicationController
 
 
     def show
-        @song = Song.find(params[:id])
+        @song = ::Songs::Find.new(id: params[:id]).execute
     end
 
     def edit
@@ -39,7 +39,7 @@ class SongsController < ApplicationController
 
     def destroy 
         song  = Song.find(params[:id])
-        song.destroy 
+        ::Songs::Destroy.new(id: params[:id]).execute
         redirect_to songs_path
 
     end

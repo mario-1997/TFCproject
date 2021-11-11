@@ -1,10 +1,21 @@
 <div class="padre">
     <div class="form-new">
-        <%=form_for @concert do |f| %>
-            <p><%=f.label "Lugar: "%><%=@concert.place%></p> <!-- muestro el nombre del grupo-->
-            <p><%=f.label "Fecha: "%><%=@concert.concert_date%></p>
-            <p><%=f.label "Grupo: "%><%=@concert.group.name%></p> 
-        <%end%>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Lugar</th>
+                    <th>Fecha</th>
+                    <th>Grupo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%=@concert.id%></td>
+                <td><%=@concert.place%></td>
+                <td><%=@concert.concert_date%></td>
+                <td><%=@concert.group.name%></td>
+            </tbody>
+        </table>
     </div>
 </div>
 

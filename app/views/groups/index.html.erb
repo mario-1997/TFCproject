@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-md-6 aa">
-            <%=link_to "Crear grupo", new_group_path, class:"btn btn-outline-success create-button"%>
+            <%=link_to "Crear grupo", new_group_path, class:"btn btn-outline-success btn-sm create-button"%>
         </div>
     </div>
 </div>
@@ -22,23 +22,18 @@
 <div class="container-table">    
     <table class="table table-hover">
         <thead>
-            <tr>
-                <th scope="col">Identificador</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Estilo musical</th>      
-                <th scope="col"></th>                  
+            <tr>            
+                <th scope="col">Nombre</th>                             
             </tr>
         </thead>
         <tbody>
             <%@groups.each do |group|%>
                 <tr>
-                    <td><%=group.id%>
-                    <td><%=group.name%></td>
-                    <td><%=group.musical_style%></td>
+                    <td><%=group.name%></td>                    
                     <td>
-                        <%=link_to "Ver", group, class:"btn btn-outline-success"%> 
-                        <%=link_to "Editar", edit_group_path(group), class:"btn btn-outline-success "%>
-                        <%=link_to "Eliminar", group, method: :delete ,data:{confirm:"Seguro de que quieres eliminar"}, class:"btn btn-outline-success"%>
+                        <%=link_to "Detalles", group, class:"btn btn-outline-success btn-sm"%> 
+                        <%=link_to "Editar", edit_group_path(group), class:"btn btn-outline-success btn-sm "%>
+                        <%=link_to "Eliminar", group, method: :delete ,data:{confirm:"Seguro de que quieres eliminar"}, class:"btn btn-outline-success btn-sm"%>
                     </td>                             
                 </tr>                    
             <%end%>                        

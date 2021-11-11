@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
         @group = Groups::Create.new(group_params: group_params).execute 
         #redirect_to @group
         if(@group.save)  #si el grupo ya está creado me redirijo a gruppos
-            redirect_to @group 
+            redirect_to groups_path 
         else 
             render :new, notice: 'No se ha podido crear ningun grupo' #si no está creado voy a new y lo creo
         end
@@ -22,9 +22,9 @@ class GroupsController < ApplicationController
 
 
     def show  #metodo para mostrar un solo grupo ----->  (el metodo all me muestra todos los grupos)
+           
+        @group= ::Groups::Find.new(id: params[:id]).execute #solo cogemos el id del array params
         
-       
-        @group = Group.find(params[:id]) #solo cogemos el id del array params
         #p "****************"
        #p @group
     end
