@@ -1,7 +1,8 @@
 class MembersController < ApplicationController
 
     def index
-        @members =  Member.all
+        #@members =  Member.all
+        @members = ::Members::Search.new.execute
     end
 
     def new
@@ -10,9 +11,9 @@ class MembersController < ApplicationController
     end
 
     def create   #guardo en la base de datos y redirijo donde quiera  (Esto no tiene vista)
-        @member = Member.new(member_params)  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
+        @member = Members::Create.new(member_params: member_params).execute  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
         if(@member.save)  #si el grupo ya está creado me redirijo a gruppos
-            redirect_to @member 
+            redirect_to members_path
         else 
             render :new , notice: 'No se ha podido crear ningun grupo'#si no está creado voy a new y lo creo
         end
@@ -20,13 +21,13 @@ class MembersController < ApplicationController
 
     def destroy
         member = Member.find(params[:id])  #guardamos el id de un grupo en la variable group
-        member.destroy  #borramos el grupo con el id guardado en la variable 'params'
+        ::Members::Destroy.new(id: params[:id]).execute #borramos el grupo con el id guardado en la variable 'params'
         redirect_to members_path  #borramos el grupo y nos redirije a la ruta de grupos
 
     end
 
     def show
-        @member = Member.find(params[:id])
+        @member = Members::Find.new(id: params[:id]).execute
     end
 
 

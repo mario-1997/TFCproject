@@ -1,11 +1,23 @@
 <div class="padre">
     <div class="form-new">
-        <%=form_for @album do |f| %>
-            <p><%=f.label "Nombre: "%><%=@album.name%></p> <!-- muestro el nombre del grupo-->
-            <p><%=f.label "Estilo musical: "%><%=@album.musical_style%></p>
-            <p><%=f.label "fecha: "%><%=@album.publication_date%></p> 
-            <p><%=f.label "Grupo: "%><%=@album.group.name%></p> 
-        <%end%>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Estilo musical</th>
+                    <th>Fecha de Lanzamiento</th>
+                    <th>Grupo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%=@album.id%></td>
+                <td><%=@album.name%></td>
+                <td><%=@album.musical_style%></td>
+                <td><%=@album.publication_date%></td>
+                <td><%=@album.group.name%></td>
+            </tbody>
+        </table>
     </div>
 </div>
 

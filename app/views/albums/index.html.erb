@@ -28,26 +28,20 @@
 <div class="container-table">    
     <table class="table table-hover">
         <thead>
-            <tr>
-                <th>Identificador</th>
-                <th>Nombre</th>
-                <th>Estilo musical</th>
-                <th>Fecha</th>
-                <th>Grupo</th>                    
+            <tr>                
+                <th>Nombre</th> 
+                <th>Grupo</th>                                  
             </tr>
         </thead>
         <tbody>            
             <%@albums.each do |album|%>
-                <tr>
-                    <td><%=album.id%>
+                <tr>                    
                     <td><%=album.name%></td>
-                    <td><%=album.musical_style%></td>
-                    <td><%=album.publication_date%></td>
-                    <td><%=album.group.name%></td>
+                    <td><%=album.group.name%></td>                    
                     <td>
-                        <%=link_to "mostrar", album%>
-                        <%=link_to "Editar", edit_album_path(album)%>  
-                        <%=link_to "Eliminar", album, method: :delete,data:{confirm:"Seguro de que quieres eliminar este Album?"}%>
+                        <%=link_to "Detalles", album, class:"btn btn-outline-success btn-sm"%>
+                        <%=link_to "Editar", edit_album_path(album), class:"btn btn-outline-success btn-sm"%>  
+                        <%=link_to "Eliminar", album, method: :delete,data:{confirm:"Seguro de que quieres eliminar este Album?"}, class:"btn btn-outline-success btn-sm"%>
                     </td>                          
                 </tr>                        
             <%end%>                            

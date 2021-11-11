@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
 
     def index
-        @albums = Album.all 
+        @albums = ::Albums::Search.new.execute 
     end
 
     def new
@@ -10,16 +10,16 @@ class AlbumsController < ApplicationController
     end
 
     def create   #guardo en la base de datos y redirijo donde quiera  (Esto no tiene vista)
-        @album = Album.new(album_params)  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
+        @album = Albums::Create.new(album_params: album_params).execute  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
         if(@album.save)  #si el grupo ya está creado me redirijo a gruppos
-            redirect_to @album 
+            redirect_to albums_path
         else 
             render :new #si no está creado voy a new y lo creo
         end
     end
 
     def show
-        @album = Album.find(params[:id])
+        @album= ::Albums::Find.new(id: params[:id]).execute
     end
 
     def edit
@@ -44,7 +44,7 @@ class AlbumsController < ApplicationController
             redirect_to albums_path, notice: 'No se ha podido eliminar ningun album'
         else
            
-            album.destroy
+            ::Albums::Destroy.new(id: params[:id]).execute
             redirect_to albums_path
         end
     end
