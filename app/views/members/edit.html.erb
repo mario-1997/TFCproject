@@ -10,6 +10,9 @@
             <p><%=f.label "Ocupación en el grupo: "%>
             <%=f.text_field :ocupation%></p>
 
+            <p><%=f.label "DNI: "%>
+            <%=f.text_field :dni%></p>
+
             <p><%=f.label "Nombre del grupo: "%>
             <%=f.select :group_id,options_from_collection_for_select(@groups,'id','name')%></p>
 

@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
     
     def index
-        @concerts =  Concert.all
+        @concerts = ::Concerts::Search.new.execute
     end
 
     def new
@@ -10,23 +10,23 @@ class ConcertsController < ApplicationController
     end
 
     def create   #guardo en la base de datos y redirijo donde quiera  (Esto no tiene vista)
-        @concert = Concert.new(concert_params)  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
+        @concert = Concerts::Create.new(concert_params: concert_params).execute  #guardamos en esta variable los parametros necesarios para ceracion de un grupo 
         if(@concert.save)  #si el grupo ya está creado me redirijo a gruppos
-            redirect_to @concert 
+            redirect_to concerts_path 
         else 
-            render :new #si no está creado voy a new y lo creo
+            render :new, notice: 'No se ha podido asignar ningun concierto' #si no está creado voy a new y lo creo
         end
     end
 
     def destroy
         concert = Concert.find(params[:id])  #guardamos el id de un grupo en la variable group
-        concert.destroy  #borramos el grupo con el id guardado en la variable 'params'
+        ::Concerts::Destroy.new(id: params[:id]).execute  #borramos el grupo con el id guardado en la variable 'params'
         redirect_to concerts_path  #borramos el grupo y nos redirije a la ruta de grupos
 
     end
 
     def show
-        @concert = Concert.find(params[:id])
+        @concert= ::Concerts::Find.new(id: params[:id]).execute
     end
 
 

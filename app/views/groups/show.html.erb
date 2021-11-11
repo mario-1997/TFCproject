@@ -1,12 +1,20 @@
 
 <div class="padre"> 
     <div class="form-new">
-        <%=form_for @group do |f| %>
-            <p><%=f.label "Nombre del grupo: "%>
-            <%=@group.name%></p> <!-- muestro el nombre del grupo-->
-            <p><%=f.label "Estilo muscial del grupo: "%>
-            <%=@group.musical_style%></p>
-        <%end%>  
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Estilo musical</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%=@group.id%></td>
+                <td><%=@group.name%></td>
+                <td><%=@group.musical_style%></td>
+            </tbody>
+        </table>
     </div>
 
     
